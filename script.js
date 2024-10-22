@@ -1,11 +1,11 @@
 const form = document.getElementById('herons');
 
 form.addEventListener("submit", e => {
-	console.log(herons(
+	document.getElementById("result").value = herons(
 		form.elements['side-a'].value, 
 		form.elements['side-b'].value, 
 		form.elements['side-c'].value
-		));
+	)
 });
 
 const herons = (a, b, c) =>
@@ -13,7 +13,7 @@ const herons = (a, b, c) =>
 	Math.pow(Math.pow(a, 2) + Math.pow(b, 2) - Math.pow(c, 2), 2))) / 4;
 
 const ambiguousCase = (angle, a, b) => {
-	h = b * Math.sin(a);
+	const h = b * Math.sin(a);
 	if (angle < 90) {
 		if (a < h) {
 			return "no triangle";
@@ -44,6 +44,7 @@ const newtons = (g) => {
 }
 
 const polynomial = (coefficients, exponents, x) => {
-	coefficientArray = coefficients.split(" ");
-	func = '';
+	const coefficientArray = coefficients.split(" ");
+	const exponentArray = exponents.split(" ");
+	let func = '';
 }
