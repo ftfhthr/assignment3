@@ -17,8 +17,20 @@
         <input type="text" id="side-b" name="side-b"><br>
         <label for="side-c">Side c:</label><br>
         <input type="text" id="side-c" name="side-c"><br>
-        <label for="result">Result</label><br>
-        <input type="text" id="result" name="Area (Result)" readonly><br>
+        <label for="result">Area (Result):</label><br>
+        <input type="text" id="result" name="result" readonly><br>
+        <input type="submit" value="Submit">
+    </form>
+    <h1>Ambiguous Case</h1>
+    <form id="ambiguous" onsubmit="return false">
+        <label for="angle">Angle:</label><br>
+        <input type="text" id="angle" name="angle"><br>
+        <label for="side-a">Side a:</label><br>
+        <input type="text" id="side-a" name="side-a"><br>
+        <label for="side-b">Side b:</label><br>
+        <input type="text" id="side-b" name="side-b"><br>
+        <label for="result">Triangle Type (Result):</label><br>
+        <input type="text" id="amb-result" name="result" readonly><br>
         <input type="submit" value="Submit">
     </form>
 </body>

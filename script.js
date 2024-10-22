@@ -1,10 +1,20 @@
-const form = document.getElementById('herons');
+const heronsForm = document.getElementById('herons');
 
-form.addEventListener("submit", e => {
+heronsForm.addEventListener("submit", e => {
 	document.getElementById("result").value = herons(
-		form.elements['side-a'].value, 
-		form.elements['side-b'].value, 
-		form.elements['side-c'].value
+		heronsForm.elements['side-a'].value, 
+		heronsForm.elements['side-b'].value, 
+		heronsForm.elements['side-c'].value
+	)
+});
+
+const ambiguousCaseForm = document.getElementById("ambiguous");
+
+ambiguousCaseForm.addEventListener("submit", e => {
+	document.getElementById("amb-result").value = ambiguousCase(
+		ambiguousCaseForm.elements["angle"].value,
+		ambiguousCaseForm.elements["side-a"].value,
+		ambiguousCaseForm.elements["side-b"].value
 	)
 });
 
@@ -36,6 +46,7 @@ const ambiguousCase = (angle, a, b) => {
 			return "one triangle";
 		}
 	}
+	return "a";
 }
 
 const newtons = (g) => {
