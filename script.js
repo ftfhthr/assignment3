@@ -18,6 +18,14 @@ ambiguousCaseForm.addEventListener("submit", e => {
 	)
 });
 
+const newtonsForm = document.getElementById("newtons");
+
+newtonsForm.addEventListener("submit", e => {
+	document.getElementById("newtons-result").value = newtons(
+		newtonsForm.elements["guess"].value
+	)
+});
+
 const herons = (a, b, c) =>
 	(Math.sqrt(4 * Math.pow(a, 2) * Math.pow(b, 2) - 
 	Math.pow(Math.pow(a, 2) + Math.pow(b, 2) - Math.pow(c, 2), 2))) / 4;

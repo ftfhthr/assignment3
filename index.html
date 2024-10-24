@@ -19,7 +19,7 @@
         <input type="text" id="side-c" name="side-c"><br>
         <label for="result">Area (Result):</label><br>
         <input type="text" id="result" name="result" readonly><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Calculate">
     </form>
     <h1>Ambiguous Case</h1>
     <form id="ambiguous" onsubmit="return false">
@@ -29,9 +29,17 @@
         <input type="text" id="side-a" name="side-a"><br>
         <label for="side-b">Side b:</label><br>
         <input type="text" id="side-b" name="side-b"><br>
-        <label for="result">Triangle Type (Result):</label><br>
+        <label for="amb-result">Triangle Type (Result):</label><br>
         <input type="text" id="amb-result" name="result" readonly><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Calculate">
+    </form>
+    <h1>Newton's Method</h1>
+    <form id="newtons" onsubmit="return false">
+        <label for="guess">Root Guess:</label><br>
+        <input type="text" id="guess" name="guess"><br>
+        <label for="newtons-result">Root Approximation (Result):</label><br>
+        <input type="text" id="newtons-result" name="result" readonly><br>
+        <input type="submit" value="Calculate">
     </form>
 </body>
 </html>
