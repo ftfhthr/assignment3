@@ -26,6 +26,18 @@ newtonsForm.addEventListener("submit", e => {
 	)
 });
 
+const polynomialForm = document.getElementById("polynomial");
+
+polynomialForm.addEventListener("submit", e => {
+	let result = polynomial(
+		polynomialForm.elements["coefficients"].value,
+		polynomialForm.elements["exponents"].value,
+		polynomialForm.elements["x-value"].value
+	);
+	document.getElementById("poly-func").value = result[0];
+	document.getElementById("poly-eval").value = result[1];
+});
+
 const herons = (a, b, c) =>
 	(Math.sqrt(4 * Math.pow(a, 2) * Math.pow(b, 2) - 
 	Math.pow(Math.pow(a, 2) + Math.pow(b, 2) - Math.pow(c, 2), 2))) / 4;
@@ -73,6 +85,7 @@ const polynomial = (coefficients, exponents, x) => {
 		}
 	})
 	console.log(func);
+	return
 }
 
 polynomial("1 1 1", "3 2 1", "1");
