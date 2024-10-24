@@ -58,4 +58,13 @@ const polynomial = (coefficients, exponents, x) => {
 	const coefficientArray = coefficients.split(" ");
 	const exponentArray = exponents.split(" ");
 	let func = '';
+	coefficientArray.forEach((coefficient, index) => {
+		func += coefficient + "x^" + exponentArray[index];
+		if (index != coefficientArray.length - 1) {
+			func += " + ";
+		}
+	})
+	console.log(func);
 }
+
+polynomial("1 1 1", "3 2 1", "1");
