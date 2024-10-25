@@ -43,7 +43,7 @@ const herons = (a, b, c) =>
 	Math.pow(Math.pow(a, 2) + Math.pow(b, 2) - Math.pow(c, 2), 2))) / 4;
 
 const ambiguousCase = (angle, a, b) => {
-	const h = b * Math.sin(a);
+	const h = b * Math.sin(angle);
 	if (angle < 90) {
 		if (a < h) {
 			return "no triangle";
