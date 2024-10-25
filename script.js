@@ -77,15 +77,17 @@ const newtons = (g) => {
 const polynomial = (coefficients, exponents, x) => {
 	const coefficientArray = coefficients.split(" ");
 	const exponentArray = exponents.split(" ");
-	let func = '';
+	let func = "f(x) = ";
+	let eval = `f(${x}) = `;
+	let result = 0;
 	coefficientArray.forEach((coefficient, index) => {
 		func += coefficient + "x^" + exponentArray[index];
+		result += Math.pow(coefficient, exponentArray[index]);
 		if (index != coefficientArray.length - 1) {
 			func += " + ";
 		}
 	})
+	eval += result;
 	console.log(func);
-	return
+	return [func, eval];
 }
-
-polynomial("1 1 1", "3 2 1", "1");
