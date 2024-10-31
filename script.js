@@ -78,17 +78,20 @@ const newtons = (g) => {
 const polynomial = (coefficients, exponents, x) => {
 	const coefficientArray = coefficients.split(" ");
 	const exponentArray = exponents.split(" ");
+	if (coefficientArray.length != exponentArray.length ||
+		coefficients == "" || exponents == "") return ["error", ""];
 	let func = "f(x) = ";
 	let eval = `f(${x}) = `;
 	let result = 0;
 	coefficientArray.forEach((coefficient, index) => {
+		if (isNaN(coefficient) || isNaN(exponentArray[index])) return ["error", ""];
 		func += coefficient + "x^" + exponentArray[index];
-		result += Math.pow(coefficient, exponentArray[index]);
+		result += Math.pow(coefficient * x, exponentArray[index]);
 		if (index != coefficientArray.length - 1) {
 			func += " + ";
 		}
 	})
 	eval += result;
-	console.log(func);
+	if (isNaN(x) || x == "") return [func, "error"]
 	return [func, eval];
 }
