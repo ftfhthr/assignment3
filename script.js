@@ -39,13 +39,16 @@ polynomialForm.addEventListener("submit", e => {
 });
 
 const herons = (a, b, c) => {
+	// check if inputs are empty and if they are numbers
 	if (a == "" || b == "" || c == "" || isNaN(a) || isNaN(b) || isNaN(c)) return "error";
 
+	// calculate result
 	(Math.sqrt(4 * Math.pow(a, 2) * Math.pow(b, 2) -
 	Math.pow(Math.pow(a, 2) + Math.pow(b, 2) - Math.pow(c, 2), 2))) / 4;
 }
 
 const ambiguousCase = (angle, a, b) => {
+	// check if inputs are empty and if they are numbers
 	if (angle == "" || a == "" || b == "" || isNaN(angle) || isNaN(a) || isNaN(b)) return "error";
 
 	const h = b * Math.sin(angle * Math.PI / 180);
@@ -75,6 +78,7 @@ const ambiguousCase = (angle, a, b) => {
 }
 
 const newtons = (g) => {
+	// check if input is empty and if it's a number
 	if (isNaN(g) || g == "") return ["error", ""];
 
 	let approximation = g - (6 * Math.pow(g, 4) - 13 * Math.pow(g, 3) - 18 * Math.pow(g, 2) + 7 * g + 6) /
@@ -96,7 +100,7 @@ const polynomial = (coefficients, exponents, x) => {
 	const coefficientArray = coefficients.split(" ");
 	const exponentArray = exponents.split(" ");
 
-	// check if coefficient and exponent inputs are empty
+	// check if coefficient and exponent inputs are empty and if they are equal
 	if (coefficientArray.length != exponentArray.length ||
 		coefficients == "" || exponents == "") return ["error", ""];
 
