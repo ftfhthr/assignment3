@@ -65,8 +65,7 @@ const ambiguousCase = (angle, a, b) => {
 		else if (h < a && a < b) {
 			return "two triangles (ambiguous case)";
 		}
-	}
-	else {
+	} else {
 		if (a < b || a == b) {
 			return "no triangle";
 		}
