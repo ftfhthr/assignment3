@@ -33,6 +33,10 @@ input[type=text] {
     margin: 10px 0px 10px;
 }
 
+.result {
+    background-color: #ddd;
+}
+
 input[type=submit] {
     background-color: rgb(0, 121, 255);
     color: white;

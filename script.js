@@ -21,9 +21,9 @@ ambiguousCaseForm.addEventListener("submit", e => {
 const newtonsForm = document.getElementById("newtons");
 
 newtonsForm.addEventListener("submit", e => {
-	document.getElementById("newtons-result").value = newtons(
-		newtonsForm.elements["guess"].value
-	)
+	let result = newtons(newtonsForm.elements["guess"].value)
+	document.getElementById("newtons-appr").value = result[0];
+	document.getElementById("newtons-root").value = result[1];
 });
 
 const polynomialForm = document.getElementById("polynomial");
@@ -71,8 +71,16 @@ const ambiguousCase = (angle, a, b) => {
 }
 
 const newtons = (g) => {
-	return g - (6 * Math.pow(g, 4) - 13 * Math.pow(g, 3) - 18 * Math.pow(g, 2) + 7 * g + 6) /
-		(24 * Math.pow(g, 3) - 39 * Math.pow(g, 2) - 36 * g + 7)
+	let approximation = g - (6 * Math.pow(g, 4) - 13 * Math.pow(g, 3) - 18 * Math.pow(g, 2) + 7 * g + 6) /
+	(24 * Math.pow(g, 3) - 39 * Math.pow(g, 2) - 36 * g + 7);
+	let root = approximation;
+	while (root - g != 0) {
+		g = root;
+		root = g - (6 * Math.pow(g, 4) - 13 * Math.pow(g, 3) - 18 * Math.pow(g, 2) + 7 * g + 6) /
+		(24 * Math.pow(g, 3) - 39 * Math.pow(g, 2) - 36 * g + 7);
+	}
+	console.log(`${approximation}, ${root}`);
+	return [approximation, root];
 }
 
 const polynomial = (coefficients, exponents, x) => {
