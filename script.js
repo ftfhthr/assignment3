@@ -43,7 +43,7 @@ const herons = (a, b, c) => {
 	if (a == "" || b == "" || c == "" || isNaN(a) || isNaN(b) || isNaN(c)) return "error";
 
 	// calculate result
-	(Math.sqrt(4 * Math.pow(a, 2) * Math.pow(b, 2) -
+	return (Math.sqrt(4 * Math.pow(a, 2) * Math.pow(b, 2) -
 	Math.pow(Math.pow(a, 2) + Math.pow(b, 2) - Math.pow(c, 2), 2))) / 4;
 }
 
@@ -114,7 +114,7 @@ const polynomial = (coefficients, exponents, x) => {
 
 		// create function and calculate result
 		func += `${coefficientArray[i]}x^${exponentArray[i]}`;
-		result += Math.pow(coefficientArray[i] * x, exponentArray[i]);
+		result += coefficientArray[i] * Math.pow(x, exponentArray[i]);
 		if (i != coefficientArray.length - 1) {
 			func += " + ";
 		}
